@@ -2,7 +2,11 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
-  entry: './app/index.js',
+  entry: [
+    'webpack-dev-server/client?http://0.0.0.0:8080',
+    'webpack/hot/only-dev-server',
+    './app/index.js'
+  ],
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js'
@@ -12,13 +16,18 @@ module.exports = {
   },
   module: {
     loaders: [
-			{ test: /\.js|jsx$/, exclude: /node_modules/, loader: 'babel-loader' },
+      {
+        test: /\.js|jsx$/,
+        exclude: /node_modules/,
+        loaders: ['react-hot', 'babel-loader']
+      },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.png$/, loader: 'url-loader?limit=85000' },
       { test: /\.jpg$/, loader: 'file-loader' }
     ]
   },
   plugins: [
+    new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     })
@@ -26,6 +35,6 @@ module.exports = {
 
   devServer: {
     contentBase: './build',
-    devTool: 'eval'
+    devTool: 'inline-source-map'
   }
 }
