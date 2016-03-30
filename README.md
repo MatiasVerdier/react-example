@@ -1,5 +1,9 @@
+### Importante!!
+
+> Este proyecto solo tiene fines educativos. Aquí es donde iré aplicando los conocimientos adquiridos en el desarrollo de aplicaciones con [React](https://facebook.github.io/react/)
+
 # Aplicación tareas (Todo App)
-Ejemplo de aplicación de tareas utilizando React, Redux, Webpack y ES2015 mediante Babel
+Ejemplo de aplicación de tareas utilizando React, Redux, Webpack y ES2015 mediante Babel.
 
 ### Funcionalidades
 
