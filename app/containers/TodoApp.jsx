@@ -6,10 +6,6 @@ import { bindActionCreators } from 'redux'
 import * as actionCreators from '../actions/actionCreators'
 
 class TodoApp extends Component {
-  constructor () {
-    super()
-  }
-
   render () {
     return (
       <div>
